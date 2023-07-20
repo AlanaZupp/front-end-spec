@@ -9,3 +9,12 @@ export const MovieResultItem = ({ title, overview }: MovieResult) => {
     </Stack>
   );
 };
+
+export const MovieResultSmallItem = ({ title, overview }: MovieResult) => {
+  return (
+    <Stack>
+      <Typography variant="h6">{title}</Typography>
+      <Typography>{overview}</Typography>
+    </Stack>
+  );
+};

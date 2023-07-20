@@ -1,7 +1,7 @@
 import { MovieResult, PersonResult, TVResult } from "@/clients/tmdb";
 import { Stack, Typography } from "@mui/material";
-import { MovieResultItem } from "./MovieResultItem";
-import { TvResultItem } from "./TvResultItem";
+import { MovieResultSmallItem } from "./MovieResultItem";
+import { TvResultSmallItem } from "./TvResultItem";
 
 export const PersonResultItem = ({
   name,
@@ -10,18 +10,18 @@ export const PersonResultItem = ({
 }: PersonResult) => {
   return (
     <Stack>
-      <Typography variant="h4">{name}</Typography>
-      <Typography>{known_for_department}</Typography>
+      <Typography variant="h4">
+        {name} - {known_for_department}
+      </Typography>
       <>
-        {known_for.forEach((knownFor) => {
+        {known_for.map((knownFor) => {
           if (knownFor.media_type == "movie") {
-            return MovieResultItem(knownFor as MovieResult);
+            return MovieResultSmallItem(knownFor as MovieResult);
           } else {
-            return TvResultItem(knownFor as TVResult);
+            return TvResultSmallItem(knownFor as TVResult);
           }
         })}
       </>
-      <Typography>{known_for_department}</Typography>
     </Stack>
   );
 };
