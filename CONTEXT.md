@@ -29,3 +29,5 @@ testing completed visually as no logic was harmed in the making
 ### future work
 
 implementing NEXT.JS features for improving repo.
+test can be refactored
+visual changes
