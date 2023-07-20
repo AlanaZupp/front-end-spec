@@ -1,5 +1,6 @@
 import { MovieResult, PersonResult, TVResult } from "@/clients/tmdb";
 import { MovieResultItem } from "@/components/MovieResultItem";
+import { PersonResultItem } from "@/components/PersonResultItem";
 import { TvResultItem } from "@/components/TvResultItem";
 import { Typography } from "@mui/material";
 
@@ -14,6 +15,9 @@ export const SearchResultItem = ({
     case "movie":
       return MovieResultItem(props as MovieResult);
       break;
+
+    case "person":
+      return PersonResultItem(props as PersonResult);
 
     default:
       return <Typography>Search result is not a movie</Typography>;
