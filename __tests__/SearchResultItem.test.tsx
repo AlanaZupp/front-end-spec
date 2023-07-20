@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { SearchResultItem } from "./SearchResultItem";
+import { SearchResultItem } from "../src/app/search/SearchResultItem";
 import { MovieResult, PersonResult, TVResult } from "@/clients/tmdb";
 
 const movie: Partial<MovieResult> = {
