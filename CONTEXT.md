@@ -20,4 +20,12 @@ new ones.
 
 ### Approach to solution
 
+separating out result concerns to individual files to deal with
+
 ### Testing
+
+testing completed visually as no logic was harmed in the making
+
+### future work
+
+implementing NEXT.JS features for improving repo.
