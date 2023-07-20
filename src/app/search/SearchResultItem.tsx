@@ -1,32 +1,22 @@
-import { Stack, Typography } from "@mui/material";
+import { MovieResult, PersonResult, TVResult } from "@/clients/tmdb";
+import { MovieResultItem } from "@/components/MovieResultItem";
+import { TvResultItem } from "@/components/TvResultItem";
+import { Typography } from "@mui/material";
 
 export const SearchResultItem = ({
-  title = "",
-  overview = "",
-  media_type,
-}: {
-  backdrop_path: string;
-  id: number;
-  title: string;
-  original_language: string;
-  original_title: string;
-  overview: string;
-  poster_path: string;
-  media_type: string;
-  genre_ids: Array<number>;
-  popularity: number;
-  release_date: string;
-  vote_average: number;
-  vote_count: number;
-}) => {
-  if (media_type !== "movie") {
-    return <Typography>Search result is not a movie</Typography>;
-  }
+  ...props
+}: MovieResult | PersonResult | TVResult) => {
+  switch (props.media_type) {
+    case "tv":
+      return TvResultItem(props as TVResult);
+      break;
 
-  return (
-    <Stack>
-      <Typography variant="h4">{title}</Typography>
-      <Typography>{overview}</Typography>
-    </Stack>
-  );
+    case "movie":
+      return MovieResultItem(props as MovieResult);
+      break;
+
+    default:
+      return <Typography>Search result is not a movie</Typography>;
+      break;
+  }
 };
