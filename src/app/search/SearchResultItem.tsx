@@ -10,17 +10,14 @@ export const SearchResultItem = ({
   switch (props.media_type) {
     case "tv":
       return TvResultItem(props as TVResult);
-      break;
 
     case "movie":
       return MovieResultItem(props as MovieResult);
-      break;
 
     case "person":
       return PersonResultItem(props as PersonResult);
 
     default:
       return <Typography>Search result is not a movie</Typography>;
-      break;
   }
 };
